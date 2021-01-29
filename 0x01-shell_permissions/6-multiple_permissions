@@ -1,2 +1,2 @@
-D#!/bin/bash
-chmosd 754 hello
+BD#!/bin/bash
+chmosd ug+x hello
