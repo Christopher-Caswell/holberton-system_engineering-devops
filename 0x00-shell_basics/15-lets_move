@@ -1,1 +1,2 @@
 #!/bin/bash
+mv -type f name "^[A-Z]" /tmp/u
