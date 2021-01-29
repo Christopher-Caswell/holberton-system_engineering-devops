@@ -1,2 +1,2 @@
-BD#!/bin/bash
+#!/bin/bash
 chmosd ug+x hello
