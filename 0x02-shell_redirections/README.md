@@ -1,0 +1,1 @@
+A series of command tests for learning redirections and filters
