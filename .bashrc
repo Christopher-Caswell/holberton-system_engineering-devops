@@ -2,6 +2,8 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+#gcc alias g="gcc -Wall -Wextra -Werror -pedantic"
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
