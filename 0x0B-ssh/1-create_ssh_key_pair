@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Create a private key with 4096
 # `bits with name holb and pw betty
-ssh -keygen -b 4096 -N betty -f holberton 
+ssh -keygen -b 4096 -N holberton -f betty
