@@ -1,0 +1,1 @@
+This directory contains a series of Bash based loops for experience in scripting

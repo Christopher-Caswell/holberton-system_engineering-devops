@@ -1,0 +1,14 @@
+#Your Ubuntu Vagrant machine has an SSH configuration
+#file for the local SSH client, let’s configure it to
+#our needs so that you can connect to a server without
+#typing a password. Share your SSH client
+#configuration in your answer file.
+#name of user
+Host Womp
+     #host web address
+     HostName 54.172.197.155
+     #file used to verify key
+     IdentityFile ~/.ssh/holberton
+     #whether or not it will request a password
+     StrictHostKeyChecking no
+     
