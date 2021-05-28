@@ -6,7 +6,7 @@
 # Requirements:
 # You must use the while loop (for and until are forbidden)
 # You must use the case statement
-x=0
+x=1
 while [ $x -lt 20 ]
 do
     echo "$x"
