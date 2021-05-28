@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#Write a Bash script that displays Holberton School
+#10 times, but for the 9th iteration, displays
+#Holberton School and then Hi on a new line
+for x in {1..10}
+do
+	if ! ((9))
+	   echo "Holberton"
+	   echo "Hi"
+	else
+	    echo "Holberton"
+done
