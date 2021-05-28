@@ -7,7 +7,7 @@
 # You must use the while loop (for and until are forbidden)
 # You must use the case statement
 x=1
-while [ $x -lt 20 ]
+while [ $x -lt 21 ]
 do
     echo "$x"
 case "$x" in
