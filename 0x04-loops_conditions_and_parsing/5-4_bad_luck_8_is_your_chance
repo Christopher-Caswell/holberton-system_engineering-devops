@@ -6,15 +6,17 @@
 # Requirements:
 # You must use the while loop (for and until are forbidden)
 # You must use the if, elif and else statements
-while ((i < 10)); do
-((i++))
-if ((i == 4))
+x=0
+while [ $x -lt 10 ];
+do
+if [ $x -eq 3 ]
 then
     echo "bad luck"
-elif ((i == 8))
+elif [ $x -eq 7 ]
 then
     echo "good luck"
 else
     echo "Holberton School"
 fi
+((x++))
 done
