@@ -12,7 +12,7 @@ do
     while [ $y -lt 60 ]
     do
 	echo $y
-    ((y++))
+	((y++))
     done
     ((x++))
 done
