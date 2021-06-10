@@ -6,7 +6,7 @@ sudo apt-get -y upgrade
 
 sudo apt-get -y install haproxy
 
-str="\nfrontend http_web\n\tbind *:80\n\tstats uri /haproxy?stats\n\tdefault_backend custom_backend\n\nbackend custom_backend\n\tbalance roundrobin\n\tserver web-01 18.212.78.36:80 check\n\tserver web-02 54.196.233.122:80 check"
+str="\nfrontend http_web\n\tbind *:80\n\tstats uri /haproxy?stats\n\tdefault_backend custom_backend\n\nbackend custom_backend\n\tbalance roundrobin\n\tserver web-01 54.172.197.155:80 check\n\tserver web-02 34.230.92.222:80 check"
 
 sudo echo -e $str | sudo tee -a /etc/haproxy/haproxy.cfg
 
