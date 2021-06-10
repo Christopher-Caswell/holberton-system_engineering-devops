@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# In this first task you need to configure
+# web-02 to be identical to web-01.
+# Fortunately, you built a Bash script
+# during your web server project,
+# and they’ll now come in handy
+# to easily configure web-02.
+# Remember, always try to automate your work!
+
+# Since we’re placing our web servers
+# behind a load balancer for this project,
+# we want to add a custom Nginx response header.
+# The goal here is to be able to track which web server
+# is answering our HTTP requests,
+# to understand and track the way
+# a load balancer works. More in the coming tasks.
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
+sudo service nginx start
+echo "Holberton School" | sudo tee /var/www/html/index.nginx-debian.html
+
+find="\tlocation / {"
+replace="\tadd_header X-Served-By ${HOSTNAME};\n\n\tlocation /redirect_me {\n\t\treturn 301 \$scheme://https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n\n\terror_page 404 /error404.html;\n\n\tlocation / {"
+
+sudo sed -i "s@^${find}@${replace}@" /etc/nginx/sites-available/default
+
+sudo touch /var/www/html/error404.html
+sudo echo "Ceci n'est pas une page" | sudo tee /var/www/html/error404.html
+
+sudo service nginx restart
