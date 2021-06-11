@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# something helpful. I'll write it later
+
+digInfo() {
+    TypeandIP=$(dig $2.$1 | grep -A1 'ANSWER SECTION:' | awk '{print $4,$5}')
+    type=$(echo $TypeandIP | awk '{print $1}')
+    ip=$(echo $TypeandIP | awk '{print $2}')
+    echo "The subdomain $2 is a $type record and points to $ip"
+}
+
+if [ $# -eq 1 ]; then
+    digInfo $1 www
+    digInfo $1 lb-01
+    digInfo $1 web-01
+    digInfo $1 web-02
+elif [ $# -eq 2 ]; then
+    digInfo $1 $2
+fi
