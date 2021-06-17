@@ -1,0 +1,39 @@
+#!/usr/bin/python3
+"""Using Restful API to get employee tasks"""
+
+import requests
+import sys
+
+
+def get_employee_tasks(employeeId):
+    """
+    Return information on the employee to do list
+    """
+
+    name = ''
+    task_list = []
+    completed_counter = 0
+
+    usersRes = requests.get('https://jsonplaceholder.typicode.com/users/{}'
+                            .format(employeeId))
+    todosRes = requests.get('https://jsonplaceholder.typicode.com/users/{}/'
+                            'todos'.format(employeeId))
+
+    name = usersRes.json().get('name')
+    todosJson = todosRes.json()
+
+    for task in todosJson:
+        if task.get('completed'):
+            completed_counter += 1
+            task_list.append(task.get('title'))
+
+    print('Employee {} is done with tasks({}/{}):'.format(name,
+          completed_counter, len(todosJson)))
+
+    for title in task_list:
+        print("\t {}".format(title))
+
+    return 0
+
+if __name__ == "__main__":
+    get_employee_tasks(sys.argv[1])
