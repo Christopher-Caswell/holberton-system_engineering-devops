@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # Write a Bash script that:
 
 # Creates the file /var/run/holbertonscript.pid
